@@ -28,16 +28,14 @@ app.get("/beers", (req, response) => {
     .getBeers()
     .then(beersFromApi => {
     //  console.log(beersFromApi)
-      response.render("beers", { doctitle: "Page of beers",
-    beersFromApi
+      response.render("beers", { doctitle: "Page of beers", beersFromApi
   })
   })
-    .catch(error => console.log(error));
-  });
+    .catch(error => console.log(error));});
 
 
 
-  app.get("/random-beers", (req, response) => {
+  app.get("/random-beer", (req, response) => {
   
     punkAPI
   .getRandom()
@@ -45,11 +43,7 @@ app.get("/beers", (req, response) => {
 console.log(randomBeerFromApi)
 response.render("random-beer", { doctitle : "Our proposal is:", randomBeerFromApi : randomBeerFromApi[0]})
   })
-  .catch(error => console.log(error));
-  
-  
-  
-  
+  .catch(error => console.log(error));  
   })
 
 
